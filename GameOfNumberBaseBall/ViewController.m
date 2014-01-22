@@ -56,6 +56,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 }
@@ -87,6 +88,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 }
@@ -117,6 +119,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -148,6 +151,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -179,6 +183,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 }
@@ -209,6 +214,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -240,6 +246,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -271,6 +278,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -302,6 +310,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -333,6 +342,7 @@
 			}
 			break;
 		default:
+			_index--;
 			break;
 	}
 
@@ -354,29 +364,72 @@
 			break;
 	}
 	
+	[_data removeObjectAtIndex:_index];
 	self.enterButton.enabled = NO;
 }
 - (IBAction)clickEnter:(id)sender {
-	[self initNumber];
+	
+	NSLog(@"data %@",_data);
+	
+	[self initEnter];
+	
+	self.countLabel.text = [NSString stringWithFormat:@"%d", ++_count];
+
 }
 - (IBAction)clickRe:(id)sender {
+	[self initNumber];
+	self.countLabel.text = @"0";
+}
+
+- (void)initEnter {
+	[self initImg];
+	_index = 0;
+	_data = [NSMutableArray array];
+	self.backButton.enabled = NO;
+	self.enterButton.enabled = NO;
+}
+
+- (void)initImg {
+	self.numImg1.image = [UIImage imageNamed:@"question-75.png"];
+	self.numImg2.image = [UIImage imageNamed:@"question-75.png"];
+	self.numImg3.image = [UIImage imageNamed:@"question-75.png"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
 	[self initNumber];
-	self.enterButton.enabled = NO;
-	self.backButton.enabled = NO;
-	
-	_duple = @[[NSNumber numberWithInt:0],[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:3],[NSNumber numberWithInt:4],[NSNumber numberWithInt:5],[NSNumber numberWithInt:6],[NSNumber numberWithInt:7],[NSNumber numberWithInt:8],[NSNumber numberWithInt:9]];
 }
 
 - (void)initNumber {
+	self.enterButton.enabled = NO;
+	self.backButton.enabled = NO;
+	
+	[self initImg];
+	
 	_index = 0;
 	_count = 0;
-	_data = [NSMutableArray array];
-	_result = @[[NSNumber numberWithInt:arc4random() % 10],[NSNumber numberWithInt:arc4random() % 10],[NSNumber numberWithInt:arc4random() % 10]];
+	_data = [[NSMutableArray alloc] init];
+	
+	int num1 = -1;
+	int num2 = -1;
+	int num3 = -1;
+	
+	do {
+		num1 = arc4random() % 10;
+		num2 = arc4random() % 10;
+		num3 = arc4random() % 10;
+		
+		if(num1 != num2 && num1 != num3 && num2 != num3) {
+			break;
+		}
+		
+		} while(YES);
+	
+	
+	
+	_result = @[[NSNumber numberWithInt:num1],[NSNumber numberWithInt:num2],[NSNumber numberWithInt:num3]];
+	
 	NSLog(@"result : %@", _result);
 }
 
@@ -384,6 +437,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	_duple = @[[NSNumber numberWithInt:0],[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:3],[NSNumber numberWithInt:4],[NSNumber numberWithInt:5],[NSNumber numberWithInt:6],[NSNumber numberWithInt:7],[NSNumber numberWithInt:8],[NSNumber numberWithInt:9]];
 }
 
 - (void)didReceiveMemoryWarning
