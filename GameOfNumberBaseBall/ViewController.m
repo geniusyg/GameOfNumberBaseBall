@@ -8,15 +8,16 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIAlertViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *numImg1;
 @property (weak, nonatomic) IBOutlet UIImageView *numImg2;
 @property (weak, nonatomic) IBOutlet UIImageView *numImg3;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-
-
+@property (weak, nonatomic) IBOutlet UILabel *strikeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ballLabel;
 
 @end
 
@@ -26,6 +27,18 @@
 	NSMutableArray *_data;
 	NSArray *_result;
 	NSArray *_duple;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if(1 == alertView.tag) {
+		if(alertView.cancelButtonIndex == buttonIndex) {
+			[self initNumber];
+		}
+	} else if(2 == alertView.tag) {
+		if(alertView.cancelButtonIndex != buttonIndex) {
+			[self initNumber];
+		}
+	}
 }
 
 
@@ -370,6 +383,85 @@
 - (IBAction)clickEnter:(id)sender {
 	
 	NSLog(@"data %@",_data);
+
+	if([_data objectAtIndex:0] == [_result objectAtIndex:0] && [_data objectAtIndex:1] == [_result objectAtIndex:1] && [_data objectAtIndex:2] == [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"3";
+		self.ballLabel.text = @"0";
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"The answer" message:[NSString stringWithFormat:@"%@ %@ %@", [_result objectAtIndex:0], [_result objectAtIndex:1], [_result objectAtIndex:2]] delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil];
+		alert.tag = 1;
+		[alert show];
+		return;
+	}
+	
+	else if([_data objectAtIndex:0] != [_result objectAtIndex:0] && [_data objectAtIndex:1] == [_result objectAtIndex:1] && [_data objectAtIndex:2] == [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"2";
+		if([_data objectAtIndex:0] == [_result objectAtIndex:1] || [_data objectAtIndex:0] == [_result objectAtIndex:1]) {
+			self.ballLabel.text = @"1";
+		} else {
+			self.ballLabel.text = @"0";
+		}
+	} else if([_data objectAtIndex:0] == [_result objectAtIndex:0] && [_data objectAtIndex:1] != [_result objectAtIndex:1] && [_data objectAtIndex:2] == [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"2";
+		if([_data objectAtIndex:1] == [_result objectAtIndex:0] || [_data objectAtIndex:1] == [_result objectAtIndex:2]) {
+			self.ballLabel.text = @"1";
+		} else {
+			self.ballLabel.text = @"0";
+		}
+	} else if([_data objectAtIndex:0] == [_result objectAtIndex:0] && [_data objectAtIndex:1] == [_result objectAtIndex:1] && [_data objectAtIndex:2] != [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"2";
+		if([_data objectAtIndex:2] == [_result objectAtIndex:0] || [_data objectAtIndex:2] == [_result objectAtIndex:1]) {
+			self.ballLabel.text = @"1";
+		} else {
+			self.ballLabel.text = @"0";
+		}
+	}
+	
+	else if([_data objectAtIndex:0] == [_result objectAtIndex:0] && [_data objectAtIndex:1] != [_result objectAtIndex:1] && [_data objectAtIndex:2] != [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"1";
+		if([_data objectAtIndex:1] == [_result objectAtIndex:2] && [_data objectAtIndex:2] == [_result objectAtIndex:1]) {
+			self.ballLabel.text = @"2";
+		} else if([_data objectAtIndex:1] == [_result objectAtIndex:2] || [_data objectAtIndex:2] == [_result objectAtIndex:1]) {
+			self.ballLabel.text = @"1";
+		} else {
+			self.ballLabel.text = @"0";
+		}
+	} else if([_data objectAtIndex:0] != [_result objectAtIndex:0] && [_data objectAtIndex:1] == [_result objectAtIndex:1] && [_data objectAtIndex:2] != [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"1";
+		if([_data objectAtIndex:0] == [_result objectAtIndex:2] && [_data objectAtIndex:2] == [_result objectAtIndex:0]) {
+			self.ballLabel.text = @"2";
+		} else if([_data objectAtIndex:0] == [_result objectAtIndex:2] || [_data objectAtIndex:2] == [_result objectAtIndex:0]) {
+			self.ballLabel.text = @"1";
+		} else {
+			self.ballLabel.text = @"0";
+		}
+	} else if([_data objectAtIndex:0] != [_result objectAtIndex:0] && [_data objectAtIndex:1] != [_result objectAtIndex:1] && [_data objectAtIndex:2] == [_result objectAtIndex:2]) {
+		self.strikeLabel.text = @"1";
+		if([_data objectAtIndex:0] == [_result objectAtIndex:1] && [_data objectAtIndex:1] == [_result objectAtIndex:0]) {
+			self.ballLabel.text = @"2";
+		} else if([_data objectAtIndex:0] == [_result objectAtIndex:1] || [_data objectAtIndex:1] == [_result objectAtIndex:0]) {
+			self.ballLabel.text = @"1";
+		} else {
+			self.ballLabel.text = @"0";
+		}
+	} else {
+		self.strikeLabel.text = @"0";
+		NSInteger tmp = 0;
+		for(int i=0; i<3; i++) {
+			for(int j=i+1; j<3; j++) {
+				if(([_data objectAtIndex:i] == [_result objectAtIndex:j]) || ([_data objectAtIndex:j] == [_result objectAtIndex:i])) {
+					tmp++;
+				 }
+			}
+		}
+		if(tmp == 3) {
+			self.ballLabel.text = @"3";
+		} else if(tmp == 2) {
+			self.ballLabel.text = @"2";
+		} else if(tmp == 1) {
+			self.ballLabel.text = @"1";
+		}
+	}
+	
 	
 	[self initEnter];
 	
@@ -377,8 +469,9 @@
 
 }
 - (IBAction)clickRe:(id)sender {
-	[self initNumber];
-	self.countLabel.text = @"0";
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Really" message:@"Quit this game?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+	alert.tag = 2;
+	[alert show];
 }
 
 - (void)initEnter {
@@ -411,6 +504,9 @@
 	_count = 0;
 	_data = [[NSMutableArray alloc] init];
 	
+	self.strikeLabel.text = @"0";
+	self.ballLabel.text = @"0";
+	
 	int num1 = -1;
 	int num2 = -1;
 	int num3 = -1;
@@ -424,11 +520,11 @@
 			break;
 		}
 		
-		} while(YES);
-	
-	
+	} while(YES);
 	
 	_result = @[[NSNumber numberWithInt:num1],[NSNumber numberWithInt:num2],[NSNumber numberWithInt:num3]];
+	
+	self.countLabel.text = @"0";
 	
 	NSLog(@"result : %@", _result);
 }

@@ -21,7 +21,6 @@
 		00AAE4CE188F5262008E0C83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AAE4B0188F5262008E0C83 /* UIKit.framework */; };
 		00AAE4D6188F5262008E0C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE4D4188F5262008E0C83 /* InfoPlist.strings */; };
 		00AAE4D8188F5262008E0C83 /* GameOfNumberBaseBallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AAE4D7188F5262008E0C83 /* GameOfNumberBaseBallTests.m */; };
-		00AAE4E2188F544E008E0C83 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AAE4E1188F544E008E0C83 /* FacebookSDK.framework */; };
 		00AAE4E6188F5845008E0C83 /* shuffle-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE4E5188F5845008E0C83 /* shuffle-48.png */; };
 		00AAE505188F76E3008E0C83 /* question-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE504188F76E3008E0C83 /* question-75.png */; };
 		00AAE507188F77CB008E0C83 /* 0-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE506188F77CB008E0C83 /* 0-64.png */; };
@@ -46,6 +45,7 @@
 		00AAE52D188F79AC008E0C83 /* 7_c-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE52C188F79AC008E0C83 /* 7_c-64.png */; };
 		00AAE52F188F79B0008E0C83 /* 8_c-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE52E188F79B0008E0C83 /* 8_c-64.png */; };
 		00AAE531188F79B4008E0C83 /* 9_c-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE530188F79B4008E0C83 /* 9_c-64.png */; };
+		00AAE533188FA9E0008E0C83 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE532188FA9E0008E0C83 /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		00AAE4D3188F5262008E0C83 /* GameOfNumberBaseBallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameOfNumberBaseBallTests-Info.plist"; sourceTree = "<group>"; };
 		00AAE4D5188F5262008E0C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00AAE4D7188F5262008E0C83 /* GameOfNumberBaseBallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfNumberBaseBallTests.m; sourceTree = "<group>"; };
-		00AAE4E1188F544E008E0C83 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		00AAE4E5188F5845008E0C83 /* shuffle-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle-48.png"; sourceTree = "<group>"; };
 		00AAE504188F76E3008E0C83 /* question-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question-75.png"; sourceTree = "<group>"; };
 		00AAE506188F77CB008E0C83 /* 0-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0-64.png"; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		00AAE52C188F79AC008E0C83 /* 7_c-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7_c-64.png"; sourceTree = "<group>"; };
 		00AAE52E188F79B0008E0C83 /* 8_c-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8_c-64.png"; sourceTree = "<group>"; };
 		00AAE530188F79B4008E0C83 /* 9_c-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9_c-64.png"; sourceTree = "<group>"; };
+		00AAE532188FA9E0008E0C83 /* db.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00AAE4AF188F5262008E0C83 /* CoreGraphics.framework in Frameworks */,
-				00AAE4E2188F544E008E0C83 /* FacebookSDK.framework in Frameworks */,
 				00AAE4B1188F5262008E0C83 /* UIKit.framework in Frameworks */,
 				00AAE4AD188F5262008E0C83 /* Foundation.framework in Frameworks */,
 			);
@@ -169,8 +168,8 @@
 				00AAE4BE188F5262008E0C83 /* Main.storyboard */,
 				00AAE4C1188F5262008E0C83 /* ViewController.h */,
 				00AAE4C2188F5262008E0C83 /* ViewController.m */,
+				00AAE532188FA9E0008E0C83 /* db.sqlite */,
 				00AAE4C4188F5262008E0C83 /* Images.xcassets */,
-				00AAE4E1188F544E008E0C83 /* FacebookSDK.framework */,
 				00AAE4B3188F5262008E0C83 /* Supporting Files */,
 			);
 			path = GameOfNumberBaseBall;
@@ -327,6 +326,7 @@
 				00AAE531188F79B4008E0C83 /* 9_c-64.png in Resources */,
 				00AAE51B188F7889008E0C83 /* backspace-64.png in Resources */,
 				00AAE51F188F798B008E0C83 /* 0_c-64.png in Resources */,
+				00AAE533188FA9E0008E0C83 /* db.sqlite in Resources */,
 				00AAE519188F77F2008E0C83 /* 9-64.png in Resources */,
 				00AAE4C0188F5262008E0C83 /* Main.storyboard in Resources */,
 				00AAE51D188F7893008E0C83 /* enter-64.png in Resources */,
