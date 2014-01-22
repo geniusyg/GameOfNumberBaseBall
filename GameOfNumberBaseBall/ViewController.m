@@ -338,13 +338,23 @@
 
 }
 - (IBAction)clickBack:(id)sender {
-	if(0 == --_index) {
-		self.backButton.enabled = NO;
+	
+	switch (--_index) {
+		case 0:
+			self.backButton.enabled = NO;
+			self.numImg1.image = [UIImage imageNamed:@"question-75.png"];
+			break;
+		case 1:
+			self.backButton.enabled = YES;
+			self.numImg2.image = [UIImage imageNamed:@"question-75.png"];
+		case 2:
+			self.backButton.enabled = YES;
+			self.numImg3.image = [UIImage imageNamed:@"question-75.png"];
+		default:
+			break;
 	}
 	
-	if(2 != --_index) {
-		self.enterButton.enabled = NO;
-	}
+	self.enterButton.enabled = NO;
 }
 - (IBAction)clickEnter:(id)sender {
 	[self initNumber];
