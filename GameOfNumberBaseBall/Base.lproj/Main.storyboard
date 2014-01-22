@@ -228,8 +228,6 @@
         <image name="backspace-64.png" width="64" height="64"/>
         <image name="enter-64.png" width="64" height="64"/>
         <image name="question-75.png" width="75" height="75"/>
-        <image name="question-75.png" width="75" height="75"/>
-        <image name="question-75.png" width="75" height="75"/>
         <image name="shuffle-48.png" width="48" height="48"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

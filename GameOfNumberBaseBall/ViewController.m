@@ -387,7 +387,7 @@
 	if([_data objectAtIndex:0] == [_result objectAtIndex:0] && [_data objectAtIndex:1] == [_result objectAtIndex:1] && [_data objectAtIndex:2] == [_result objectAtIndex:2]) {
 		self.strikeLabel.text = @"3";
 		self.ballLabel.text = @"0";
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"The answer" message:[NSString stringWithFormat:@"%@ %@ %@", [_result objectAtIndex:0], [_result objectAtIndex:1], [_result objectAtIndex:2]] delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulation!!!!" message:[NSString stringWithFormat:@"Count : %d", _count+1] delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil];
 		alert.tag = 1;
 		[alert show];
 		return;
@@ -542,6 +542,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
 
