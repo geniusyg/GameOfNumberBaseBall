@@ -22,6 +22,8 @@
 		00AAE4D6188F5262008E0C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE4D4188F5262008E0C83 /* InfoPlist.strings */; };
 		00AAE4D8188F5262008E0C83 /* GameOfNumberBaseBallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AAE4D7188F5262008E0C83 /* GameOfNumberBaseBallTests.m */; };
 		00AAE4E2188F544E008E0C83 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AAE4E1188F544E008E0C83 /* FacebookSDK.framework */; };
+		00AAE4E6188F5845008E0C83 /* shuffle-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE4E5188F5845008E0C83 /* shuffle-48.png */; };
+		00AAE4E8188F591D008E0C83 /* help-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE4E7188F591D008E0C83 /* help-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		00AAE4D5188F5262008E0C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00AAE4D7188F5262008E0C83 /* GameOfNumberBaseBallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfNumberBaseBallTests.m; sourceTree = "<group>"; };
 		00AAE4E1188F544E008E0C83 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		00AAE4E5188F5845008E0C83 /* shuffle-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle-48.png"; sourceTree = "<group>"; };
+		00AAE4E7188F591D008E0C83 /* help-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				00AAE4BB188F5262008E0C83 /* AppDelegate.h */,
 				00AAE4BC188F5262008E0C83 /* AppDelegate.m */,
 				00AAE4BE188F5262008E0C83 /* Main.storyboard */,
+				00AAE4E7188F591D008E0C83 /* help-50.png */,
+				00AAE4E5188F5845008E0C83 /* shuffle-48.png */,
 				00AAE4C1188F5262008E0C83 /* ViewController.h */,
 				00AAE4E1188F544E008E0C83 /* FacebookSDK.framework */,
 				00AAE4C2188F5262008E0C83 /* ViewController.m */,
@@ -235,6 +241,8 @@
 				00AAE4C5188F5262008E0C83 /* Images.xcassets in Resources */,
 				00AAE4B7188F5262008E0C83 /* InfoPlist.strings in Resources */,
 				00AAE4C0188F5262008E0C83 /* Main.storyboard in Resources */,
+				00AAE4E6188F5845008E0C83 /* shuffle-48.png in Resources */,
+				00AAE4E8188F591D008E0C83 /* help-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
