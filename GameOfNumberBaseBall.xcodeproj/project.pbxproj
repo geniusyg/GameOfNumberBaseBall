@@ -45,6 +45,7 @@
 		00AAE52D188F79AC008E0C83 /* 7_c-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE52C188F79AC008E0C83 /* 7_c-64.png */; };
 		00AAE52F188F79B0008E0C83 /* 8_c-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE52E188F79B0008E0C83 /* 8_c-64.png */; };
 		00AAE531188F79B4008E0C83 /* 9_c-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE530188F79B4008E0C83 /* 9_c-64.png */; };
+		40C1D4A318928E6E0028D9B1 /* GB.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C1D4A218928E6E0028D9B1 /* GB.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		00AAE52E188F79B0008E0C83 /* 8_c-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8_c-64.png"; sourceTree = "<group>"; };
 		00AAE530188F79B4008E0C83 /* 9_c-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9_c-64.png"; sourceTree = "<group>"; };
 		00AAE537188FAB91008E0C83 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		40C1D4A218928E6E0028D9B1 /* GB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GB.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		00AAE4B2188F5262008E0C83 /* GameOfNumberBaseBall */ = {
 			isa = PBXGroup;
 			children = (
+				40C1D4A218928E6E0028D9B1 /* GB.png */,
 				00AAE4EF188F7547008E0C83 /* images */,
 				00AAE4BB188F5262008E0C83 /* AppDelegate.h */,
 				00AAE4BC188F5262008E0C83 /* AppDelegate.m */,
@@ -312,6 +315,7 @@
 			files = (
 				00AAE527188F79A1008E0C83 /* 4_c-64.png in Resources */,
 				00AAE523188F7997008E0C83 /* 2_c-64.png in Resources */,
+				40C1D4A318928E6E0028D9B1 /* GB.png in Resources */,
 				00AAE509188F77D3008E0C83 /* 1-64.png in Resources */,
 				00AAE4C5188F5262008E0C83 /* Images.xcassets in Resources */,
 				00AAE52D188F79AC008E0C83 /* 7_c-64.png in Resources */,
@@ -501,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MAYBE THERE LIMITED LIABILITY COMPANY (F4FT6M5A89)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/sdt-1/Documents/Projects03/GameOfNumberBaseBall/GameOfNumberBaseBall",
@@ -509,6 +514,7 @@
 				GCC_PREFIX_HEADER = "GameOfNumberBaseBall/GameOfNumberBaseBall-Prefix.pch";
 				INFOPLIST_FILE = "GameOfNumberBaseBall/GameOfNumberBaseBall-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "36E96B66-2EE6-4279-9CBB-50873EB19BBC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -574,6 +580,7 @@
 				00AAE4DD188F5262008E0C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00AAE4DE188F5262008E0C83 /* Build configuration list for PBXNativeTarget "GameOfNumberBaseBallTests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +589,7 @@
 				00AAE4E0188F5262008E0C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
